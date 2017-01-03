@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<!-- HTML5 Hello world by kirupa - http://www.kirupa.com/html5/getting_your_feet_wet_html5_pg1.htm -->
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<title> Dragon Chess </title>
+<style type="text/css">
+#left {
+	float:left;
+	width: 100%;
+	max-height:100%;
+	overflow: scroll;
+	align-items: center;
+}
+#right {
+	float:right;
+	width:100%;
+	max-height:100%;
+	overflow: scroll;
+}
+div {
+	font-size:15px;
+	font-family: cursive;
+	text-align:center;
+	color:Blue;
+}
+
+table {
+	border-width:1px;
+	border-color: #000000;
+	
+}
+
+.td1 {
+	background-color:White;
+	Width:30px;
+	Height:30px;
+	
+}
+
+.td2 {
+	background-color:Black;
+	Width:30px;
+	Height:30px;
+}
+
+.td3 {
+	background-color:Green;
+	Width:30px;
+	Height:30px;
+}
+
+.td4 {
+	background-color:Red;
+	Width:30px;
+	Height:30px;
+}
+/*
+}
+.Rsylph {
+	
+}
+.Bsylph {
+	
+}
+.Rgriffon {
+	
+}
+.Bgriffon {
+	
+}
+.Rdragon {
+	
+}
+.Bdragon {
+	
+}
+.Roliphant {
+	
+}
+.Boliphant {
+	
+}
+.Runicorn {
+	
+}
+.Bunicorn {
+	
+}
+.Rhero {
+	
+}
+.Bhero {
+	
+}
+.Rthief {
+	
+}
+.Bthief {
+	
+}
+.Rcleric {
+	
+}
+.Bcleric {
+	
+}
+.Rmage {
+	
+}
+.Bmage {
+	
+}
+.Rking {
+	
+}
+.Bking {
+	
+}
+.Rpaladin {
+	
+}
+.Bpaladin {
+	
+}
+.Rdwarf {
+	
+}
+.Bdwarf {
+	
+}
+.Rbasilisk {
+	
+}
+.Bbasilisk {
+	
+}
+.Relemental {
+	
+}
+.Belemental {
+	
+}
+.Rwarrior {
+	
+}
+.Bwarrior {
+	
+}
+*/
+
+</style>
+<style>
+/*
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="site.js"></script>
+*/
+</style>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type='text/javascript'>
+$(".td3").click(function () {
+	$(this).removeClass("td3");
+});
+
+</script>
+</head>
+<body>
+	<div id="left">
+	<table>
+		<tr>
+			<td id="A1U" class="td1"></td><td id="B1U" class="td3"></td><td id="C1U" class="td1">G</td><td id="D1U" class="td3"></td><td id="E1U" class="td1"></td><td id="F1U" class="td3"></td><td id="G1U" class="td1">R</td><td id="H1U" class="td3"></td><td id="I1U" class="td1"></td><td id="J1U" class="td3"></td><td id="K1U" class="td1">G</td><td id="L1U" class="td3"></td>
+		</tr>
+		<tr>
+			<td id="A2U" class="td3">S</td><td id="B2U" class="td1"></td><td id="C2U" class="td3">S</td><td id="D2U" class="td1"></td><td id="E2U" class="td3">S</td><td id="F2U" class="td1"></td><td id="G2U" class="td3">S</td><td id="H2U" class="td1"></td><td id="I2U" class="td3">S</td><td id="J2U" class="td1"></td><td id="K2U" class="td3">S</td><td id="L2U" class="td1"></td>
+		</tr>
+		<tr>
+			<td id="A3U" class="td1"></td><td id="B3U" class="td3"></td><td id="C3U" class="td1"></td><td id="D3U" class="td3"></td><td id="E3U" class="td1"></td><td id="F3U" class="td3"></td><td id="G3U" class="td1"></td><td id="H3U" class="td3"></td><td id="I3U" class="td1"></td><td id="J3U" class="td3"></td><td id="K3U" class="td1"></td><td id="L3U" class="td3"></td>
+		</tr>
+		<tr>
+			<td id="A4U" class="td3"></td><td id="B4U" class="td1"></td><td id="C4U" class="td3"></td><td id="D4U" class="td1"></td><td id="E4U" class="td3"></td><td id="F4U" class="td1"></td><td id="G4U" class="td3"></td><td id="H4U" class="td1"></td><td id="I4U" class="td3"></td><td id="J4U" class="td1"></td><td id="K4U" class="td3"></td><td id="L4U" class="td1"></td>
+		</tr>
+		<tr>
+			<td id="A5U" class="td1"></td><td id="B5U" class="td3"></td><td id="C5U" class="td1"></td><td id="D5U" class="td3"></td><td id="E5U" class="td1"></td><td id="F5U" class="td3"></td><td id="G5U" class="td1"></td><td id="H5U" class="td3"></td><td id="I5U" class="td1"></td><td id="J5U" class="td3"></td><td id="K5U" class="td1"></td><td id="L5U" class="td3"></td>
+		</tr>
+		<tr>
+			<td id="A6U" class="td3"></td><td id="B6U" class="td1"></td><td id="C6U" class="td3"></td><td id="D6U" class="td1"></td><td id="E6U" class="td3"></td><td id="F6U" class="td1"></td><td id="G6U" class="td3"></td><td id="H6U" class="td1"></td><td id="I6U" class="td3"></td><td id="J6U" class="td1"></td><td id="K6U" class="td3"></td><td id="L6U" class="td1"></td>
+		</tr>
+		<tr>
+			<td id="A7U" class="td1">S</td><td id="B7U" class="td3"></td><td id="C7U" class="td1">S</td><td id="D7U" class="td3"></td><td id="E7U" class="td1">S</td><td id="F7U" class="td3"></td><td id="G7U" class="td1">S</td><td id="H7U" class="td3"></td><td id="I7U" class="td1">S</td><td id="J7U" class="td3"></td><td id="K7U" class="td1">S</td><td id="L7U" class="td3"></td>
+		</tr>
+		<tr>
+			<td id="A8U" class="td3"></td><td id="B8U" class="td1"></td><td id="C8U" class="td3">G</td><td id="D8U" class="td1"></td><td id="E8U" class="td3"></td><td id="F8U" class="td1"></td><td id="G8U" class="td3">R</td><td id="H8U" class="td1"></td><td id="I8U" class="td3"></td><td id="J8U" class="td1"></td><td id="K8U" class="td3">G</td><td id="L8U" class="td1"></td>
+		</tr>
+		
+	</table>
+	<table>
+		
+		<tr>
+			<td id="A1M" class="td1">O</td><td id="B1M" class="td2">U</td><td id="C1M" class="td1">H</td><td id="D1M" class="td2">T</td><td id="E1M" class="td1">C</td><td id="F1M" class="td2">M</td><td id="G1M" class="td1">K</td><td id="H1M" class="td2">P</td><td id="I1M" class="td1">T</td><td id="J1M" class="td2">H</td><td id="K1M" class="td1">U</td><td id="L1M" class="td2">O</td>
+		</tr>
+		<tr>
+			<td id="A2M" class="td2">W</td><td id="B2M" class="td1">W</td><td id="C2M" class="td2">W</td><td id="D2M" class="td1">W</td><td id="E2M" class="td2">W</td><td id="F2M" class="td1">W</td><td id="G2M" class="td2">W</td><td id="H2M" class="td1">W</td><td id="I2M" class="td2">W</td><td id="J2M" class="td1">W</td><td id="K2M" class="td2">W</td><td id="L2M" class="td1">W</td>	
+		</tr>
+		<tr>
+			<td id="A3M" class="td1"></td><td id="B3M" class="td2"></td><td id="C3M" class="td1"></td><td id="D3M" class="td2"></td><td id="E3M" class="td1"></td><td id="F3M" class="td2"></td><td id="G3M" class="td1"></td><td id="H3M" class="td2"></td><td id="I3M" class="td1"></td><td id="J3M" class="td2"></td><td id="K3M" class="td1"></td><td id="L3M" class="td2"></td>
+		</tr>
+		<tr>
+			<td id="A4M" class="td2"></td><td id="B4M" class="td1"></td><td id="C4M" class="td2"></td><td id="D4M" class="td1"></td><td id="E4M" class="td2"></td><td id="F4M" class="td1"></td><td id="G4M" class="td2"></td><td id="H4M" class="td1"></td><td id="I4M" class="td2"></td><td id="J4M" class="td1"></td><td id="K4M" class="td2"></td><td id="L4M" class="td1"></td>	
+		</tr>
+		<tr>
+			<td id="A5M" class="td1"></td><td id="B5M" class="td2"></td><td id="C5M" class="td1"></td><td id="D5M" class="td2"></td><td id="E5M" class="td1"></td><td id="F5M" class="td2"></td><td id="G5M" class="td1"></td><td id="H5M" class="td2"></td><td id="I5M" class="td1"></td><td id="J5M" class="td2"></td><td id="K5M" class="td1"></td><td id="L5M" class="td2"></td>
+		</tr>
+		<tr>
+			<td id="A6M" class="td2"></td><td id="B6M" class="td1"></td><td id="C6M" class="td2"></td><td id="D6M" class="td1"></td><td id="E6M" class="td2"></td><td id="F6M" class="td1"></td><td id="G6M" class="td2"></td><td id="H6M" class="td1"></td><td id="I6M" class="td2"></td><td id="J6M" class="td1"></td><td id="K6M" class="td2"></td><td id="L6M" class="td1"></td>	
+		</tr> 
+		<tr>
+			<td id="A7M" class="td1">W</td><td id="B7M" class="td2">W</td><td id="C7M" class="td1">W</td><td id="D7M" class="td2">W</td><td id="E7M" class="td1">W</td><td id="F7M" class="td2">W</td><td id="G7M" class="td1">W</td><td id="H7M" class="td2">W</td><td id="I7M" class="td1">W</td><td id="J7M" class="td2">W</td><td id="K7M" class="td1">W</td><td id="L7M" class="td2">W</td>
+		</tr>
+		<tr>
+			<td id="A8M" class="td2">O</td><td id="B8M" class="td1">U</td><td id="C8M" class="td2">H</td><td id="D8M" class="td1">T</td><td id="E8M" class="td2">C</td><td id="F8M" class="td1">M</td><td id="G8M" class="td2">K</td><td id="H8M" class="td1">P</td><td id="I8M" class="td2">T</td><td id="J8M" class="td1">H</td><td id="K8M" class="td2">U</td><td id="L8M" class="td1">O</td>
+		</tr>
+	</table>
+	<table>
+		
+		
+		<tr>
+			<td id="A1L" class="td1"></td><td id="B1L" class="td4"></td><td id="C1L" class="td1">B</td><td id="D1L" class="td4"></td><td id="E1L" class="td1"></td><td id="F1L" class="td4"></td><td id="G1L" class="td1">E</td><td id="H1L" class="td4"></td><td id="I1L" class="td1"></td><td id="J1L" class="td4"></td><td id="K1L" class="td1">B</td><td id="L1L" class="td4"></td>
+		</tr>
+		<tr>
+			<td id="A2L" class="td4"></td><td id="B2L" class="td1">D</td><td id="C2L" class="td4"></td><td id="D2L" class="td1">D</td><td id="E2L" class="td4"></td><td id="F2L" class="td1">D</td><td id="G2L" class="td4"></td><td id="H2L" class="td1">D</td><td id="I2L" class="td4"></td><td id="J2L" class="td1">D</td><td id="K2L" class="td4"></td><td id="L2L" class="td1">D</td>
+		</tr>
+		<tr>
+			<td id="A3L" class="td1"></td><td id="B3L" class="td4"></td><td id="C3L" class="td1"></td><td id="D3L" class="td4"></td><td id="E3L" class="td1"></td><td id="F3L" class="td4"></td><td id="G3L" class="td1"></td><td id="H3L" class="td4"></td><td id="I3L" class="td1"></td><td id="J3L" class="td4"></td><td id="K3L" class="td1"></td><td id="L3L" class="td4"></td>
+		</tr>
+		<tr>
+			<td id="A4L" class="td4"></td><td id="B4L" class="td1"></td><td id="C4L" class="td4"></td><td id="D4L" class="td1"></td><td id="E4L" class="td4"></td><td id="F4L" class="td1"></td><td id="G4L" class="td4"></td><td id="H4L" class="td1"></td><td id="I4L" class="td4"></td><td id="J4L" class="td1"></td><td id="K4L" class="td4"></td><td id="L4L" class="td1"></td>
+		</tr>
+		<tr>
+			<td id="A5L" class="td1"></td><td id="B5L" class="td4"></td><td id="C5L" class="td1"></td><td id="D5L" class="td4"></td><td id="E5L" class="td1"></td><td id="F5L" class="td4"></td><td id="G5L" class="td1"></td><td id="H5L" class="td4"></td><td id="I5L" class="td1"></td><td id="J5L" class="td4"></td><td id="K5L" class="td1"></td><td id="L5L" class="td4"></td>
+		</tr>
+		<tr>
+			<td id="A6L" class="td4"></td><td id="B6L" class="td1"></td><td id="C6L" class="td4"></td><td id="D6L" class="td1"></td><td id="E6L" class="td4"></td><td id="F6L" class="td1"></td><td id="G6L" class="td4"></td><td id="H6L" class="td1"></td><td id="I6L" class="td4"></td><td id="J6L" class="td1"></td><td id="K6L" class="td4"></td><td id="L6L" class="td1"></td>
+		</tr>
+		<tr>
+			<td id="A7L" class="td1"></td><td id="B7L" class="td4">D</td><td id="C7L" class="td1"></td><td id="D7L" class="td4">D</td><td id="E7L" class="td1"></td><td id="F7L" class="td4">D</td><td id="G7L" class="td1"></td><td id="H7L" class="td4">D</td><td id="I7L" class="td1"></td><td id="J7L" class="td4">D</td><td id="K7L" class="td1"></td><td id="L7L" class="td4">D</td>
+		</tr>
+		<tr>
+			<td id="A8L" class="td4"></td><td id="B8L" class="td1"></td><td id="C8L" class="td4">B</td><td id="D8L" class="td1"></td><td id="E8L" class="td4"></td><td id="F8L" class="td1"></td><td id="G8L" class="td4">E</td><td id="H8L" class="td1"></td><td id="I8L" class="td4"></td><td id="J8L" class="td1"></td><td id="K8L" class="td4">B</td><td id="L8L" class="td1"></td>
+		</tr>
+	</table>
+	</div>
+<table id="right">
+	<thead>
+		<tr>
+			<th colspan="2">Dragon Chess Rules</th>
+		</tr>
+		<tr>
+			<th>Piece Name</th>
+			<th>Piece Rules</th>
+		</tr>
+		<tr>
+			<th colspan="2">Upper Board (Located on Left)</th>
+		</tr>
+		
+		<tr>
+			<td>Sylph (S)</td>
+			<td>On Upper Board
+				<ul>
+					<li>Move one square Diagonally or Capture Straight Forward</li>
+					<li>Capture corresponding square on Middle Board</li>
+				</ul>
+			</td>
+				
+			<td>On Middle board
+				<ul>
+					<li>Move to corresponding square on Upper Board or to one of the starting Sylph Squares</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			
+			<td>Griffon (G)</td>
+			<td>On Upper Board
+				<ul>
+					<li>Can move and capture similarly to a knight (two squares diagonally followed by one square orthogonally{On a face side})</li>
+					<li>Can move and capture one square triagonally{diagonally} to Middle Board</li>
+				</ul>
+			</td>
+			<td>On Middle Board
+				<ul>
+					<li>Can move and capture one square diagonally</li>
+					<li>Can move and capture triagonally{diagonally} to Upper Board</li>
+				</ul>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Dragon (R)</td>
+			<td>
+				<ul>
+					<li>Can move and capture one square orthogonally or move and capture as many spaces diagonally on the Upper Board</li>
+					<li>Can capture remotely{without moving or leaving Upper Board} on the corresponding square on the Middle Board or on any square orthogonally adjacent to that square</li>
+				</td>
+			</tr>
+			
+		<tr>
+			<th colspan="2">Middle Board (Located in the Middle)</th>
+		</tr>
+		<tr>
+			<td>Warrior (W)</td>
+			<td>
+				<ul>
+					<li>Can move one square forward or capture one square diagonally forward on Middle Board</li>
+					<li>Promotes to the {Hero} piece when it reaches the furthest row</li>
+				</ul>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Oliphant (O)</td>
+			<td>
+				<ul>
+					<li>Can move or capture as many squares in one direction orthogonally (Like Chess Rook)</li>
+				</ul>
+			</td>
+		</tr>
+		<tr>
+			<td>Unicorn (U)</td>
+			<td>
+				<ul>
+					<li>Can move and capture two squares diagonally followed by one square orthogonally (Like Chess Knight)</li>
+				</ul>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Hero (H)</td>
+			<td>On Middle Board
+				<ul>
+					<li>Can move and capture one or two squares diagonally</li>
+					<li>Can move and capture one square triagonally to Upper or Lower Board</li>
+				</ul>
+			</td>
+			<td>On Upper and Lower Boards
+				<ul>
+					<li>Can move and capture back to the previous square the Hero was on the Middle Board</li>
+				</ul>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Thief (T)</td>
+			<td>
+				<ul>
+					<li>Can move and capture as many squares diagonally on the Middle Board (Like a Chess Bishop)</li>
+				</ul>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Cleric (C)</td>
+			<td>On Any Board
+				<ul>
+					<li>Can move and capture one square in any direction on the level the Cleric is currently on</li>
+					<li>Can move to the corresponding square on any adjacent Board (Upper to/from Middle, Middle to Upper or Lower, Middle to/from Lower</li>
+				</ul>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Mage (M)</td>
+			<td>On Middle Board
+				<ul>
+					<li>Can move and capture as many spaces diagonally or in a straight line orthogonally (Like a Chess Queen)</li>
+				</ul>
+			</td>
+			<td>On Upper and Lower Boards
+				<ul>
+					<li>Can move on square orthogonally</li>
+				</ul>
+			</td>
+			<td>On Any Level
+				<ul>
+					<li> Can move to the corresponding square(Blockable{if moving to Lower Board from Upper Board, if corresponding square on Middle Board is blocked the movement is not allowed}) on any other Board</li>
+				</ul>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>King (K)</td>
+			<td>On Middle Board
+				<ul>
+					<li>Can move and capture to any adjacent square (Like a Chess King)</li>
+				</ul>
+			</td>
+			<td>On Upper and Lower Boards
+				<ul>
+					<li>Can only move to the same square the King had previously moved from on Middle Board</li>
+				</ul>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Paladin (P)</td>
+			<td>On Middle Board
+				<ul>
+					<li>Can move and capture on any adjacent square or two squares diagonally followed by one square orthogonally (Like a Chess Knight and King combined)</li>
+				</ul>
+			</td>
+			<td>On Upper and Lower Boards
+				<ul>
+					<li>Can move and capture to one square adjacent (Like a Chess King)</li>
+				</ul>
+			</td>
+			<td>On Any Board
+				<ul>
+					<li>Can move {Not capture} to one adjacent level followed by two squares orthogonally or two levels followed by one square orthogonally</li>
+				</ul>
+			</td>
+		</tr>
+		
+		<tr>
+			<th colspan="2">Lower Board (Located on the Left)</th>
+		</tr>
+		<tr>
+			<td>Dwarf (D)</<td>
+			<td>On Lower Board
+				<ul>
+					<li>Can move one square forward or sideways and capture one square diagonally forward</li>
+					<li>Can capture the corresponding square on Middle Board</li>
+				</ul>
+			</td>
+			<td>On Middle Board
+				<ul>
+					<li>Can move one square forward or sideways and capture one square diagonally forward</li>
+					<li>Can move {not capture} to the corresponding square on Lower Board</li>
+				</ul>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>Basilisk (B)</td>
+			<td>
+				<ul>
+					<li>Can move and capture one square directly forward or oe square diagonally forward; or move one square directly backwards</li>
+					<li>automatically freezes (immobilizes) an enemy piece on the coresponding square on Middle Board, whether the Basilisk moves to the square below or the enemy moves to the square above, and until the Basilisk moves away or is captured.</li>
+				</ul>
+			</td>
+		</tr>
+			
+		<tr>
+			<td>Elemental (E)</td>
+			<td>On Lower Board
+				<ul>
+					<li>Can move and capture one or two steps orthogonally {can be blocked}</li>
+					<li>can move one square diagonally</li>
+					<li>Can capture by moving one step orthogonally followed by moving to the correspinding square on Middle Board</li>
+				</ul>
+			</td>
+			<td>On Middle Board
+				<ul>
+					<li>Can move and capture by moving one square orthogonally followed by moving to the corresponding square on Lower Board
+					</li>
+				</ul>
+			</td>
+		</tr>
+	</thead>
+</table>
+
+
+</body>
+</html>
